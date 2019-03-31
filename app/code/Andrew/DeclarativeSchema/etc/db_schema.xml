@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="andrew_example"
+           resource="default"
+           comment="Test declarative scheme"
+           engine="innodb"
+           charset="utf8"
+           collation="utf8_general_ci">
+        <column xsi:type="int" name="id" identity="true" unsigned="true" comment="Auto Increment" />
+        <column xsi:type="varchar" name="brand_name" length="1024" nullable="false" comment="Brand Name" />
+        <column xsi:type="text" name="description" nullable="true" comment="Brand Name" />
+        <column xsi:type="boolean"  name="is_enable" comment="Is enabled" nullable="false" default="0"/>
+        <column xsi:type="decimal" name="weighing_factor" precision="5" scale="4" default="1" unsigned="true"
+                nullable="false" comment="weighing factor"/>
+            <!-- like DECIMAL(5,4)-->
+        <column xsi:type="timestamp" name="created_at" default="CURRENT_TIMESTAMP" />
+        <column xsi:type="timestamp" name="updated_at" default="CURRENT_TIMESTAMP" on_update="true"/>
+        <column xsi:type="smallint" name="website_id" padding="5" unsigned="true" nullable="false" comment="Website id"
+                identity="false"/>
+
+        <constraint xsi:type="foreign"
+                    referenceId="ANDREW_EXAMPLE_WEBSITE_ID_STORE_WEBSITE_WEBSITE_ID"
+                    column="website_id"
+                    referenceTable="store_website"
+                    referenceColumn="website_id"
+                    onDelete="CASCADE"
+        />
+        <!--onDelete = CASCADE, SET NULL, NO ACTION-->
+        <!--table attribute - ignored -->
+        <!--referenceId = this value we can get and change after table will be created in db_schema_whitelist.json-->
+
+        <constraint xsi:type="unique" referenceId="ANDREW_EXAMPLE_BRAND_NAME">
+            <column name="brand_name" />
+        </constraint>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id" />
+        </constraint>
+    </table>
+</schema>

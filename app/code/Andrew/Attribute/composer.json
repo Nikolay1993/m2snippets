@@ -1,0 +1,22 @@
+{
+    "name": "andrew/module-attribute",
+    "description": "MageTV snippets",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "dr.chrom",
+            "email": "dr.chrom@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Andrew\\Attribute\\": ""
+        }
+    }
+}
