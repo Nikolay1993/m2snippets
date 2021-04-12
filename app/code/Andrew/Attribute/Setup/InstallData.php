@@ -35,7 +35,7 @@
  * 'is_html_allowed_on_front' => 'is_html_allowed_on_front', default value (false) // Is HTML allowed on frontend?
  * 'is_visible_in_advanced_search' =>'visible_in_advanced_search', default value (false) // Is the attribute visible on advanced search?
  * 'is_filterable_in_search' => 'filterable_in_search', default value (false) // Is the attribute filterable? (on frontend, in search view)
- * 'used_in_product_listing' => 'used_in_product_listing', default value (false) // Should we flat this attribute?
+ * 'used_in_product_listing' => 'used_in_product_listing', default value (false) // Should we flat this attribute? (assign list to attribute set)
  * 'used_for_sort_by' => 'used_for_sort_by', default value (false) // Can the attribute be used for the 'sort by' select on catalog/search views?
  * 'apply_to' => 'apply_to' //  Product types
  * 'position' => 'position', default value (false) // Which position on the admin area form group?
